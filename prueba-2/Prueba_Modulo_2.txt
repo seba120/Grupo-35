@@ -1,0 +1,14 @@
+Prueba correspondiente al modulo 2 python basico
+
+El repositorio donde se encuentra alojada la prueba es el siguiente:
+
+https://github.com/seba120/grupo-35
+
+El archivo se ejecuta desde el main.py el cual invoca a los metodos.
+
+integrantes del grupo:
+
+Sebatián Boettiger
+Valentina Reyes
+Jaime Lepin
+Alfonso Madrid
