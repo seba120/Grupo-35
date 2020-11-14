@@ -35,9 +35,9 @@ class Cliente:  # Se crea la clase cliente
 
 
 ################Clase Financiera#####################
-"""
+
 class Financiera:
-    def __init__(self):
+    def __init__(self, nombre_financiera , id_financiera , saldo_institucional , clientes):
         self.nombre_financiera = nombre_financiera
         self.id_financiera = id_financiera
         self.saldo_institucional = saldo_institucional
