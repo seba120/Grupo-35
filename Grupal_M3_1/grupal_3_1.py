@@ -1,12 +1,17 @@
 # se solicitan crear las clases Cliente y Financiera.
-# clase cliente
 
+# clase cliente
 class Cliente:
     def __init__ (self, nombre, id, saldo):
         self.nombre = nombre
         self.id = id
         self.saldo
 
+
+
+
+
+# clase financiera
 class Financiera:
     def __init__ (self, nombre, id, saldo_institucional, cliente):
         self.nombre = nombre
@@ -16,5 +21,5 @@ class Financiera:
 
 
 
-# clase financiera
+
 
