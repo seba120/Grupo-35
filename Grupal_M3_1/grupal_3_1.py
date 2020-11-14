@@ -1,11 +1,11 @@
 ###################Clase Cliente#######################
 
-
 class Cliente:
     def __init__(self):
-        self.nombre = nombre
-        self.id_unico = id_unico
-        self.saldo = saldo
+        self.nombre = nombre_cliente
+        self.id_unico = id_cliente
+        self.saldo = saldo_cliente
+
 
 ################Clase Financiera#####################
 
