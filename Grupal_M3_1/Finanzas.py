@@ -51,9 +51,9 @@ class Financiera:
         self.id_cliente = id_cliente
         return self.clientes.append(self.id_cliente)
 
-    def eliminar_cliente(self, indice):
-        self.indice = indice
-        return self.clientes.pop(self.indice)
+    def eliminar_cliente(self, id_cliente):
+        self.id_cliente = id_cliente
+        return self.clientes.remove(self.id_cliente)
 
     def transferir():
         return True
@@ -64,5 +64,5 @@ class Financiera:
     def abonos_totales():
         return True
 
-    def mostrar_saldo_institucional():
-        return True
+    def mostrar_saldo_institucional(self):
+        return 'El saldo institucional de financiera {}, es de: ${}'.format(self.nombre_financiera, self.saldo_institucional)

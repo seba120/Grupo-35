@@ -26,5 +26,5 @@ financiera_2.agregar_cliente(cliente_8.id_cliente)
 
 
 print(financiera_1.clientes)
-financiera_1.eliminar_cliente(0)
+financiera_1.eliminar_cliente(cliente_1.id_cliente)
 print(financiera_1.clientes)
