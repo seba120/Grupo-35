@@ -11,14 +11,20 @@ cliente_6 = Cliente("Fernando", 1000000)
 cliente_7 = Cliente("Fabiola", 1000000)
 cliente_8 = Cliente("Constanza", 1000000)
 
-print(cliente_1.id_cliente)
+financiera_1 = Financiera('Eurolatina', 100000000)
+financiera_2 = Financiera('Conosur', 100000000)
 
-'''
-lista_financiera1 = [cliente_1, cliente_2, cliente_3, cliente_4]
-lista_financiera2 = [cliente_5, cliente_6, cliente_7, cliente_8]
-lista_cliente = [lista_financiera1 + lista_financiera2]
+financiera_1.agregar_cliente(cliente_1.id_cliente)
+financiera_1.agregar_cliente(cliente_2.id_cliente)
+financiera_1.agregar_cliente(cliente_3.id_cliente)
+financiera_1.agregar_cliente(cliente_4.id_cliente)
 
-financiera1 = Financiera("financiera_1", "IDF1", 100000000, lista_financiera1)
-financiera2 = Financiera("financiera_2", "IDF2", 100000000, lista_financiera2)
+financiera_2.agregar_cliente(cliente_5.id_cliente)
+financiera_2.agregar_cliente(cliente_6.id_cliente)
+financiera_2.agregar_cliente(cliente_7.id_cliente)
+financiera_2.agregar_cliente(cliente_8.id_cliente)
 
-'''
+
+print(financiera_1.clientes)
+financiera_1.eliminar_cliente(0)
+print(financiera_1.clientes)

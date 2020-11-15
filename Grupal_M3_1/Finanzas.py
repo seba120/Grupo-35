@@ -41,17 +41,19 @@ class Cliente:  # Se crea la clase cliente
 
 
 class Financiera:
-    def __init__(self, nombre_financiera, saldo_institucional, clientes):
+    def __init__(self, nombre_financiera, saldo_institucional):
         self.nombre_financiera = nombre_financiera
         self.id_financiera = uuid.uuid4()
         self.saldo_institucional = saldo_institucional
-        self.clientes = clientes
+        self.clientes = []
 
-    def agregar_cliente():
-        return True
+    def agregar_cliente(self, id_cliente):
+        self.id_cliente = id_cliente
+        return self.clientes.append(self.id_cliente)
 
-    def eliminar_cliente():
-        return True
+    def eliminar_cliente(self, indice):
+        self.indice = indice
+        return self.clientes.pop(self.indice)
 
     def transferir():
         return True
