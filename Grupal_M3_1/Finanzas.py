@@ -1,13 +1,15 @@
+import uuid
 ###################Clase Cliente#######################
 
 
 class Cliente:  # Se crea la clase cliente
     # se define como parámetros iniciales nombre de cliente, id de cliente y saldo.
-    def __init__(self, nombre_cliente, id_cliente, saldo_cliente, ):
+    def __init__(self, nombre_cliente, saldo_cliente):
         # Se define que nombre cliente se asignará a futuro.
         self.nombre_cliente = nombre_cliente
-        # Se define que el id de cliente se asignará a futuro.
-        self.id_cliente = id_cliente
+        # Se define que el id de cliente sees asignado por el modulo uuid que
+        # genera un id unico y con uuid4 el cual genera un id aleatoreo.
+        self.id_cliente = uuid.uuid4()
         # Se define que el saldo de cliente se asignará a futuro.
         self.saldo_cliente = saldo_cliente
 
@@ -34,15 +36,14 @@ class Cliente:  # Se crea la clase cliente
         # se define que el resultado de la función será un str predefinido con dos self a llamar: nombre de cliente + saldo de cliente.
         return "El saldo de {} es: {}".format(self.nombre_cliente, self.saldo_cliente)
 
-seba = Cliente("Sebastian" , 1 , 1000000)
-print("Usted giró: ", seba.girar(300000) , ". Su saldo es:" , seba.saldo_cliente)
 
 ################Clase Financiera#####################
 
+
 class Financiera:
-    def __init__(self, nombre_financiera, id_financiera, saldo_institucional, clientes):
+    def __init__(self, nombre_financiera, saldo_institucional, clientes):
         self.nombre_financiera = nombre_financiera
-        self.id_financiera = id_financiera
+        self.id_financiera = uuid.uuid4()
         self.saldo_institucional = saldo_institucional
         self.clientes = clientes
 
@@ -63,5 +64,3 @@ class Financiera:
 
     def mostrar_saldo_institucional():
         return True
-
-
