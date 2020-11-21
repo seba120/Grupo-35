@@ -52,7 +52,6 @@ class Cliente:  # Se crea la clase cliente
         print('---------------------')
 
     # se define la función abonar con el parámetro a definir de cantidad de abono.
-
     def abonar(self, cantidad_abono):
         # se define que cantidad de abono será asignado a futuro.
         self.cantidad_abono = cantidad_abono
@@ -63,12 +62,13 @@ class Cliente:  # Se crea la clase cliente
             print('---Abono no puede ser inferior a $1')
         elif self.linea_credito < 1000000:
             self.deuda = 1000000 - self.linea_credito
-            if self.deuda >= cantidad_abono:
+            if self.deuda >= self.cantidad_abono:
                 self.abono = self.cantidad_abono
                 self.linea_credito = self.linea_credito + self.abono
                 self.excedente = 0
                 print('El monto fue abonado a su Linea de credito')
             else:
+                self.abono = self.deuda
                 self.linea_credito = self.linea_credito + self.deuda
                 self.excedente = self.cantidad_abono - self.deuda
             print('-------------------')
@@ -92,7 +92,7 @@ class Cliente:  # Se crea la clase cliente
         print('\n--- Cuenta de cliente: {} ---\nSaldo en cuenta: ${:,}\nLinea de credito disponible: ${:,}'.format(
             self.nombre_cliente, self.saldo_cliente, self.linea_credito).replace(',', '.'))
         if self.linea_credito < 1000000:
-            self.deuda_linea = (self.linea_credito - 1000000)*-1
+            self.deuda_linea = 1000000 - self.linea_credito
             print('Deuda en linea de credito: ${:,}'.format(
                 self.deuda_linea).replace(',', '.'))
         print('---------------------')
