@@ -26,16 +26,26 @@ class Condominio:
     def get_administrador(self):
         return self.administrador
 
+    # agrega guardia por parametro
     def add_guardias(self, guardia):
+        if len(self.lista_guardias) >= 4:
+            print('No es posible agregar mas guardias')
+        else:
+            self.guardia = guardia
+            self.lista_guardias.append(self.guardia)
+        return self.lista_guardias
+
+    # elimina guardia entregado por parametro
+    def del_guardias(self, guardia):
         self.guardia = guardia
-        self.lista_guardias.append(self.guardia)
+        self.lista_guardias.remove(self.guardia)
         return self.lista_guardias
 
-    def del_guardias(self):
-        return self.lista_guardias
-
+    # muestra los guardias del condominio
     def get_guardias(self):
-        return self.lista_guardias
+        for i in range(len(self.lista_guardias)):
+            print(edificio.lista_guardias[i].nombre,
+                  edificio.lista_guardias[i].apellido)
 
     def get_unidades(self):
         return self.lista_unidades
@@ -71,17 +81,34 @@ class Guardia:
 ############ Unidad_Habitacional ###################
 # class UnidadHabitacional:
 
-    ######### Ejecuciones de prueba ##########
 
-
+######### Ejecuciones de prueba ##########
+# se crea edificio
 edificio = Condominio()
-
+# se crean guardias
 guardia1 = Guardia('Juan', 'Perez')
 guardia2 = Guardia('Lalo', 'Landas')
+guardia3 = Guardia('Beto A.', 'Saber')
+guardia4 = Guardia('Tulio', 'De Las Mercedes')
+guardia5 = Guardia('Este no ', 'Alcanza')
 
-
+# se agregan guardias
 edificio.add_guardias(guardia1)
 edificio.add_guardias(guardia2)
-for i in range(len(edificio.lista_guardias)):
-    print(edificio.lista_guardias[i].nombre,
-          edificio.lista_guardias[i].apellido)
+edificio.add_guardias(guardia3)
+edificio.add_guardias(guardia4)
+# al agregar este guardia enviara mensaje de error y no lo agregara
+edificio.add_guardias(guardia5)
+# imprimo guardias guardados
+edificio.get_guardias()
+
+# se elimina guardia1
+edificio.del_guardias(guardia1)
+# se vuelven a imprimir guardias del listado
+print()
+edificio.get_guardias()
+# ahora si agregamos el guardia luego de eliminar a uno
+edificio.add_guardias(guardia5)
+# vuelvo a imprimir la lista
+print()
+edificio.get_guardias()
