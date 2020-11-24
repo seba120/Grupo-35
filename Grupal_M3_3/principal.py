@@ -6,7 +6,7 @@ import random
 
 class Condominio:
     def __init__(self):
-        self.direccion = 'direccion'
+        self.direccion = ""
         self.lista_administrador = []
         self.lista_guardias = []
         self.lista_unidades = []
@@ -20,11 +20,13 @@ class Condominio:
     def get_direccion(self):
         return self.direccion
 
-    def set_administrador(self):
-        return self.administrador
+    def set_administrador(self , nombre_administrador):
+        self.nombre_administrador = nombre_administrador
+        self.lista_administrador = self.lista_administrador.append(self.nombre_administrador)
+        return self.lista_administrador
 
     def get_administrador(self):
-        return self.administrador
+        print(self.lista_administrador)
 
     # agrega guardia por parametro
     def add_guardias(self, guardia):
@@ -112,3 +114,11 @@ edificio.add_guardias(guardia5)
 # vuelvo a imprimir la lista
 print()
 edificio.get_guardias()
+
+print()
+edificio.set_direccion("puente alto 1")
+print(edificio.get_direccion())
+
+print()
+edificio.set_administrador("Administrador2")
+edificio.get_administrador()
