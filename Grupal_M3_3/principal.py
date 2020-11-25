@@ -83,6 +83,63 @@ class Guardia:
 ############ Unidad_Habitacional ###################
 # class UnidadHabitacional:
 
+############ Cuenta corriente ###################
+# class Cuenta Corriente (con al menos 3 atributos y 4 métodos)
+
+class Cuenta_corriente:
+    def __init__(self, ingresos, gastos):
+        self.ingresos = random.randint(15000000, 18000000)
+        self.gastos = gastos
+        self.__saldo = random.randint(500000000, 800000000) 
+
+    def solicitar_prestamo(self, prestamo):
+        prestamo = self.__saldo * 0.2
+        self.__saldo = self.__saldo + prestamo
+        return self.__saldo
+
+    def set_saldo(self, nuevo_saldo):
+        self.__saldo = nuevo_saldo 
+        return self.__saldo
+        
+    def recibir_ingreso(self, ingresos):
+        self.__saldo = self.__saldo + ingresos
+        return self.__saldo
+
+
+    def pagar_gastos(self):
+        pass
+
+
+############ Terreno ###################
+# class Terreno (en el cual se pueden emplazar construcciones como edificios o conjuntos de casas. Agregue al menos 6 atributos y 6 métodos)
+
+class Terreno:
+    def __init__(self, area, perimetro, pendiente):
+        self.area = area
+        self.perimetro = perimetro
+        self.pendiente = pendiente
+        self.orientación = random.choice(["norte", "sur", "poniente", "oriente"])
+        self.__lote = uuid.uuid1()
+        self.__avaluo = random.randit(75000000, 300000000) 
+
+    def get_lote(self):
+        return self.__lote
+
+    def get_avaluo(self):
+        return self.__avaluo
+
+    def nivelar_terreno(self):
+        pass
+
+    def contruir_edificio(self):
+        pass
+
+    def contruir_casa(self):
+        pass
+
+    def demoler(self):
+        pass
+
 
 ######### Ejecuciones de prueba ##########
 # se crea edificio
