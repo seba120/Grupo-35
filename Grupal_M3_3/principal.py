@@ -68,9 +68,42 @@ class Condominio:
         return self.lista_unidades
 
 
-############ Guardia #############################
+class Terreno:
+    def __init__(self):
+        self.__superficie = random(5000, 50000)
+        self.localidad = ''
+        self.tipo_terreno = ''
+        self.cantidad_areas_verdes = random(1, 3)
+        self.__avaluo_fiscal = random(10000, 100000)
+        self.__propretario = ''
 
-# clase Guardias se le asignan atributos, solo se solicitan nombre y apellido como parametro
+    def get_superficie(self):
+        return self.__superficie
+
+    def set_localidad(self, localidad):
+        self.localidad = localidad
+        return self.localidad
+
+    def get_avaluo(self):
+        return self.__avaluo_fiscal
+
+    def set_propietario(self, propietario):
+        self.__propretario = propietario
+
+    def get_propitario(self):
+        return self.__propretario
+
+
+class CondominioVertical(Condominio, Terreno):
+    def __init__(self):
+        Condominio.__init__()
+        Terreno.__init__()
+
+    ############ Guardia #############################
+
+    # clase Guardias se le asignan atributos, solo se solicitan nombre y apellido como parametro
+
+
 class Guardia:  # en el constructor
     def __init__(self, nombre, apellido):
         self.nombre = nombre
@@ -102,7 +135,8 @@ class Guardia:  # en el constructor
 
 
 ############ Unidad_Habitacional ###################
-# class UnidadHabitacional:
+'''class UnidadHabitacional:
+    def __init__(self):'''
 
 ############ Cuenta corriente ###################
 # class Cuenta Corriente (con al menos 3 atributos y 4 métodos)
