@@ -16,20 +16,11 @@ class IngresoStock(Flor):
         self.lista_flores = []
 
     def set_flor(self):
-        for a in range(100):
-            for i in range(300):
-                nombre = random.choice(self.especie_flor)
-                tamano = random.choice(['S', 'L'])
-                #agregar_flor = [nombre, tamano]
-                self.lista_flores.append(nombre+tamano)
-                '''valor = random.uniform(0.1, 2)
-                time.sleep(valor)'''
-            print('cargando flores....\n')
-            '''for a in self.lista_flores:
-                print(a)
-
-                time.sleep(random.uniform(0.1, 2))
-            time.sleep(200)'''
+        self.inicial_flor = random.choice(self.especie_flor)
+        self.tamano_flor = random.choice(['S', 'L'])
+        # agregar_flor = [nombre, tamano]
+        self.lista_flores.append(self.inicial_flor+self.tamano_flor)
+        # time.sleep(random.uniform(0.1, 2))
 
 
 class ConfiguracionRamo(IngresoStock):
@@ -41,24 +32,40 @@ class ConfiguracionRamo(IngresoStock):
 
     def crear_ramo(self, objeto_flor):
         self.ramo_temporal = []
-        self.largo_ramo = random.randint(15, 35)
+        self.nomenclatura = []
+        self.largo_ramo = random.randint(15, 30)
         cantidad = 0
-        while True:
-            for i in range(random.randint(2, 6)):
-                self.cantidad_flor = random.randint(1, 15)
-                self.ramo_temporal.append(
-                    random.choice(objeto_flor.lista_flores[0]))
-                self.ramo_temporal.append(self.cantidad_flor)
-                cantidad += self.cantidad_flor
-            if cantidad <= self.largo_ramo:
-                break
+        faltantes = 0
+        for i in range(random.randint(2, 4)):
+            self.cantidad_flor = random.randint(1, 15)
+            self.ramo_temporal.append(
+                random.choice(objeto_flor.especie_flor))
+            self.ramo_temporal.append(self.cantidad_flor)
+            cantidad += self.cantidad_flor
+        if cantidad < self.largo_ramo:
+            faltantes = self.largo_ramo - cantidad
+        self.nomenclatura.append(random.choice(self.nombre_ramo))
+        self.nomenclatura.append(self.tamano_ramo)
+        for a in self.ramo_temporal:
+            self.nomenclatura.append(a)
+        if self.largo_ramo < cantidad:
+            self.nomenclatura.append(cantidad)
+        else:
+            self.nomenclatura.append(self.largo_ramo)
 
+        print(objeto_flor.lista_flores)
+        print(self.largo_ramo)
+        print(faltantes)
         print(cantidad)
         print(self.ramo_temporal)
+        print(self.nomenclatura)
+        print(''.join(map(str, self.nomenclatura)))
 
 
 f1 = IngresoStock()
-f1.set_flor()
+
 
 f2 = ConfiguracionRamo()
 f2.crear_ramo(f1)
+f1.set_flor()
+exit()
