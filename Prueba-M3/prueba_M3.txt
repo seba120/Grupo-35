@@ -1,0 +1,27 @@
+Prueba Modulo 3 
+
+Integrantes:
+
+Katherine Barrera
+Sebastian Boettiger
+Jaime Lepin
+Alfonso Madrid
+
+El código del programa se encuentra alojado en siguiente repositorio Grupal:
+
+https://github.com/seba120/grupo-35/tree/master/Prueba-M3
+
+Roles del grupo:
+
+Sebastián : jefe del repositorio, encargado de documentar y realizar los emerge hacia la rama master.
+
+Katherine : encargada de la lógica e ideas, diagramas de flujo.
+
+Jaime : arquitecto y diseñador de diagramas de clase.
+
+Alfonso : programador
+
+
+
+
+
