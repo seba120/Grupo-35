@@ -6,6 +6,7 @@ CREATE TABLE cliente(
     mail_cliente VARCHAR(100),
     dia_pago_suscripcion NUMERIC NOT NULL,
     CONSTRAINT cliente_pk PRIMARY KEY(id_cliente)
+    ON DELETE SET NULL
 );
 
 
