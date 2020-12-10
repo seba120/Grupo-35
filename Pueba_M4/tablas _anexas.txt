@@ -1,0 +1,52 @@
+--creacion de tabla transaccion
+
+CREATE TABLE transaccion (
+    id_transaccion BIGSERIAL,
+    fecha_transaccion DATE NOT NULL,
+    id_cliente INT NOT NULL,
+    CONSTRAINT transaccion_pk PRIMARY KEY (id_transaccion),
+    CONSTRAINT cli_tran_fk FOREIGN KEY (id_cliente)
+        REFERENCES cliente (id_cliente) MATCH SIMPLE
+        ON DELETE SET NULL
+);
+
+--creacion de tabla transaccion_producto
+
+CREATE TABLE transaccion_producto (
+    id_transaccion INT NOT NULL,
+    id_producto INT NOT NULL,
+    cantidad_producto INT NOT NULL,
+    PRIMARY KEY(id_trasaccion,id_producto)
+);
+
+--creacion tabla transaccion_pase
+
+CREATE TABLE transaccion_pase (
+    id_transaccion INT NOT NULL,
+    id_pase INT NOT NULL,
+    PRIMARY KEY(id_transaccion,id_pase)
+);
+
+--creacion tabla cliente_pase
+
+CREATE TABLE cliente_pase (
+    id_cliente INT NOT NULL,
+    id_pase INT NOT NULL,
+    PRIMARY KEY(id_cliente,id_pase)
+);
+
+--creacion tabla cliente_suscripcion
+
+CREATE TABLE cliente_suscripcion (
+    id_cliente INT NOT NULL,
+    id_suscripcion INT NOT NULL,
+    PRIMARY KEY(id_cliente,id_suscripcion)
+);
+
+--creacion tabla transaccion_suscripcion
+
+CREATE TABLE transaccion_suscripcion (
+    id_transaccion INT NOT NULL,
+    id_suscripcion INT NOT NULL,
+    PRIMARY KEY(id_transaccion,id_suscripcion)
+);
