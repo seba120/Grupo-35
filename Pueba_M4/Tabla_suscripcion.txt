@@ -1,0 +1,16 @@
+CREATE TABLE suscripcion (
+	id_suscripcion BIGSERIAL,
+	nombre_suscripcion VARCHAR(50) NOT NULL,
+	detalle_suscripcion VARCHAR(300) NOT NULL,
+	precio_suscripcion INT NOT NULL,   
+    	CONSTRAINT suscripcion_pk PRIMARY KEY(id_suscripcion)
+);
+
+
+INSERT INTO suscripcion (
+  nombre_suscripcion,detalle_suscripcion,precio_suscripcion) VALUES 
+('Mensual','Cliente puede participar de todas las clases e instalaciones del gymAsia durante 30 días desde la contratación.',30000),
+('Trimestral','Cliente puede participar de todas las clases e instalaciones del gymAsia durante 90 días desde la contratación.',90000),
+('Semestral','Cliente puede participar de todas las clases e instalaciones del gymAsia durante 120 días desde la contratación.',120000),
+('Anual','Cliente puede participar de todas las clases e instalaciones del gymAsia durante 1 año desde la contratación.',150000),
+('Estudiante','Plan especial para estudiantes desde los 16 años, donde el cliente puede participar de todas las clases e instalaciones del gymAsia durante 30 días hasta las 16:00 hrs.',20000);

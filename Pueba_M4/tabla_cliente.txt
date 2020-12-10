@@ -5,7 +5,7 @@ CREATE TABLE cliente(
     telefono_cliente NUMERIC NOT NULL,
     mail_cliente VARCHAR(100),
     dia_pago_suscripcion NUMERIC NOT NULL,
-    CONSTRAINT cliente_pk PRIMARY KEY(id_cliente)
+    CONSTRAINT cliente_pk PRIMARY KEY(id_cliente) 
 );
 
 
