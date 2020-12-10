@@ -1,6 +1,5 @@
---Tabla pases
 CREATE TABLE pase(
-    id_pase serial BIGSERIAL,
+    id_pase BIGSERIAL,
     nombre_pase VARCHAR (50) NOT NULL,
     detalle_pase VARCHAR (100) NOT NULL,
     fecha_pase DATE NOT NULL,
