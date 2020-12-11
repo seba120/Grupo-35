@@ -103,7 +103,7 @@ SELECT SUM(cantidad_producto) FROM transaccion_producto WHERE id_transaccion = [
 SELECT nombre_suscripcion FROM suscripcion WHERE id_suscripcion = [id_suscripcion escogido];
 SELECT detalle_susnombre_suscripcion FROM suscripcion WHERE id_suscripcion = [id_suscripcion escogido];
 SELECT precio_suscripcion FROM suscripcion WHERE id_sus = [id_suscripcion escogido];
-SELECT precio_suscripcion FROM suscripcion WHERE id_sus = [id_suscripcion escogido];
+SELECT CURRENT_DATE + INTERVAL '[cantidad de meses plan] month';
 
 --al presionar pagar 
 
@@ -116,6 +116,16 @@ VALUES
 INSERT INTO transaccion_producto (id_transaccion, id_producto,cantidad_producto)
 VALUES
 ([id_transaccion],[id_producto],[valor ingresado]);
+
+--se borra valor anterior de la tabla cliente_suscripcion
+
+DELETE cliente_suscripcion WHERE id_cliente = [id_cliente];
+
+--se agrega nueva suscripcion a tabla cliente_suscripcion
+
+INSERT INTO cliente_suscripcion (id_cliente,id_suscripcion)
+VALUES 
+([id_cliente],[id_suscripcion]);
 
 --se muestra en detalle
 
