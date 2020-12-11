@@ -74,3 +74,52 @@ SELECT id_transaccion FROM transaccion WHERE id_transaccion = [id_transaccion];
 SELECT fecha_transaccion FROM transaccion WHERE id_transaccion = [id_transaccion];
 SELECT SUM(cantidad_producto) FROM transaccion_producto WHERE id_transaccion = [id_transaccion];
 
+--Pases
+
+SELECT nombre_pase FROM pase WHERE id_pase = [id_pase escogido];
+SELECT detalle_pase FROM pase WHERE id_pase = [id_pase escogido];
+SELECT precio_pase WHERE id_producto = [id_pase escogido];
+
+--al presionar pagar 
+
+INSERT INTO transaccion (id_cliente)
+VALUES
+('[id_cliente seleccionado]');
+
+--una vez creado el valor de transaccion se guardara de igual forma cada transaccion_producto por cada producto distinto en la compra
+
+INSERT INTO transaccion_producto (id_transaccion, id_producto,cantidad_producto)
+VALUES
+([id_transaccion],[id_producto],[valor ingresado]);
+
+--se muestra en detalle
+
+SELECT id_transaccion FROM transaccion WHERE id_transaccion = [id_transaccion];
+SELECT fecha_transaccion FROM transaccion WHERE id_transaccion = [id_transaccion];
+SELECT SUM(cantidad_producto) FROM transaccion_producto WHERE id_transaccion = [id_transaccion];
+
+--Cambio suscripcion
+
+SELECT nombre_suscripcion FROM suscripcion WHERE id_suscripcion = [id_suscripcion escogido];
+SELECT detalle_susnombre_suscripcion FROM suscripcion WHERE id_suscripcion = [id_suscripcion escogido];
+SELECT precio_suscripcion FROM suscripcion WHERE id_sus = [id_suscripcion escogido];
+SELECT precio_suscripcion FROM suscripcion WHERE id_sus = [id_suscripcion escogido];
+
+--al presionar pagar 
+
+INSERT INTO transaccion (id_cliente)
+VALUES
+('[id_cliente seleccionado]');
+
+--una vez creado el valor de transaccion se guardara de igual forma cada transaccion_producto por cada producto distinto en la compra
+
+INSERT INTO transaccion_producto (id_transaccion, id_producto,cantidad_producto)
+VALUES
+([id_transaccion],[id_producto],[valor ingresado]);
+
+--se muestra en detalle
+
+SELECT id_transaccion FROM transaccion WHERE id_transaccion = [id_transaccion];
+SELECT fecha_transaccion FROM transaccion WHERE id_transaccion = [id_transaccion];
+SELECT SUM(cantidad_producto) FROM transaccion_producto WHERE id_transaccion = [id_transaccion];
+
