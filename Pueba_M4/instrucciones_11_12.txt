@@ -18,3 +18,24 @@ VALUES
 ('nocturno', 'valido desde 00:00 a 03:00',1500, '07-12-2020');
 
 
+--para cliente_suscripcion
+
+INSERT INTO cliente_suscripcion (id_cliente,id_suscripcion)
+VALUES
+(1,5),(2,4),(3,2),(4,3),(5,1),(6,5),(7,4),(8,3),(9,2),(10,1),(11,1),(12,2),(13,3),(14,4),(15,5),(16,5),(17,4),(18,3),(19,2),(20,1);
+
+
+--cambiar hara que se introduzca por defecto la fecha actual
+
+DELETE TABLE transaccion;
+
+
+CREATE TABLE transaccion (
+    id_transaccion BIGSERIAL,
+    fecha_transaccion DATE DEFAULT CURRENT_DATE,
+    id_cliente INT NOT NULL,
+    CONSTRAINT transaccion_pk PRIMARY KEY (id_transaccion),
+    CONSTRAINT cli_tran_fk FOREIGN KEY (id_cliente)
+        REFERENCES cliente (id_cliente) MATCH SIMPLE
+        ON DELETE SET NULL
+);
