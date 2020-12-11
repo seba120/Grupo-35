@@ -2,7 +2,7 @@
 
 CREATE TABLE transaccion (
     id_transaccion BIGSERIAL,
-    fecha_transaccion DATE NOT NULL,
+    fecha_transaccion DATE DEFAULT CURRENT_DATE,
     id_cliente INT NOT NULL,
     CONSTRAINT transaccion_pk PRIMARY KEY (id_transaccion),
     CONSTRAINT cli_tran_fk FOREIGN KEY (id_cliente)
@@ -50,3 +50,9 @@ CREATE TABLE transaccion_suscripcion (
     id_suscripcion INT NOT NULL,
     PRIMARY KEY(id_transaccion,id_suscripcion)
 );
+
+--ingreso datos cliente_suscripcion
+
+INSERT INTO cliente_suscripcion (id_cliente,id_suscripcion)
+VALUES
+(1,5),(2,4),(3,2),(4,3),(5,1),(6,5),(7,4),(8,3),(9,2),(10,1),(11,1),(12,2),(13,3),(14,4),(15,5),(16,5),(17,4),(18,3),(19,2),(20,1);

@@ -1,0 +1,20 @@
+--Inicio 
+--dependiendo de la seleccion se mostrara lista de suscripcion, pases diarios o productos en venta
+--mostrar suscripciones
+
+SELECT nombre_suscripcion FROM suscripcion WHERE id_suscripcion = [numero correspondiente al id];
+SELECT detalle_suscripcion FROM suscripcion WHERE id_suscripcion = [numero correspondiente al id];
+SELECT precio_suscripcion FROM suscripcion WHERE id_suscripcion = [numero correspondiente al id];
+
+
+--mostrar pases diarios
+
+SELECT nombre_pase FROM pase WHERE id_pase = [numero correspondiente al id];
+SELECT detalle_spase FROM pase WHERE id_pase = [numero correspondiente al id];
+SELECT valor_pase FROM pase WHERE id_pase = [numero correspondiente al id];
+
+--mostrar productos
+
+SELECT nombre_producto FROM producto WHERE id_producto = [numero correspondiente al id];
+SELECT detalle_producto FROM producto WHERE id_producto = [numero correspondiente al id];
+SELECT precio_producto FROM producto WHERE id_producto = [numero correspondiente al id];
