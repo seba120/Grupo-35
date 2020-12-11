@@ -1,0 +1,31 @@
+--Datos cliente
+--en el inicio se debe ingresar id del cliente y se mostraran los datos en la siguiente pagina
+--buscar cliente por id
+
+
+SELECT nombre_cliente FROM cliente WHERE id_cliente = [numero correspondiente al id];
+SELECT apellido_cliente FROM cliente WHERE id_cliente = [numero correspondiente al id];
+SELECT telefono_cliente FROM cliente WHERE id_cliente = [numero correspondiente al id];
+SELECT mail_cliente FROM cliente WHERE id_cliente = [numero correspondiente al id];
+SELECT s.nombre_suscripcion FROM suscripcion s
+    INNER JOIN cliente_suscripcion c_s 
+        ON c_s.id_suscripcion = s.id_suscripcion
+    INNER JOIN cliente c
+        ON c.id_cliente = c_s.id_cliente
+    WHERE c.id_cliente = [numero correspondiente al id];
+
+SELECT s.detalle_suscripcion FROM suscripcion s
+    INNER JOIN cliente_suscripcion c_s 
+        ON c_s.id_suscripcion = s.id_suscripcion
+    INNER JOIN cliente c
+        ON c.id_cliente = c_s.id_cliente
+    WHERE c.id_cliente = [numero correspondiente al id];
+
+SELECT s.precio_suscripcion FROM suscripcion s
+    INNER JOIN cliente_suscripcion c_s 
+        ON c_s.id_suscripcion = s.id_suscripcion
+    INNER JOIN cliente c
+        ON c.id_cliente = c_s.id_cliente
+    WHERE c.id_cliente = [numero correspondiente al id];
+
+SELECT dia_pago_suscripcion FROM cliente WHERE id_cliente = [numero correspondiente al id];

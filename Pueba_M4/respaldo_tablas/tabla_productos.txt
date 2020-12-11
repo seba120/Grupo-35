@@ -1,0 +1,28 @@
+CREATE TABLE producto(
+    id_producto BIGSERIAL,
+    nombre_producto VARCHAR(50) NOT NULL,
+    detalle_producto VARCHAR(50) NOT NULL,
+    precio_producto NUMERIC NOT NULL,
+    stock_producto NUMERIC NOT NULL,
+    CONSTRAINT producto_pk PRIMARY KEY(id_producto)
+);
+
+
+INSERT INTO producto (nombre_producto, detalle_producto, precio_producto, stock_producto)
+VALUES 
+('agua mineral', 'Cachantun 500cc', 700, 350),
+('agua mineral', 'Benedictino 1l', 1400, 350),
+('isotónica', 'powerade 1 l', 2000, 500),
+('barra energética', 'squeezy 50g', 1000, 1000),
+('energética', 'monster 0 azúcar', 2500, 1000),
+('energética', 'red bull', 2200, 800),
+('toalla personal', 'tamaño 40x60', 4000, 200),
+('banda elastica', 'par grado 4', 10000, 100),
+('mancuernas', 'par 1kg', 8000, 80),
+('mancuernas', 'par 5kg', 25000, 40),
+('callera', 'anti-ripper everlast', 18000, 50),
+('magnesio gimnasia', 'calistenia 250gr', 4000, 100),
+('foam roller', 'masajeador corporal', 16000, 40),
+('tatami', 'suelo deportivo', 23000, 200),
+('morral deportivo', '10 litros', 5000, 100);
+

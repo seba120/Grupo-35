@@ -1,0 +1,28 @@
+--Productos
+--se seleccciona el id del producto a comprar y los datos se iran llenando a traves de las selecciones
+
+SELECT nombre_producto FROM producto WHERE id_producto = [id_producto escogido];
+SELECT detalle_producto FROM producto WHERE id_producto = [id_producto escogido];
+
+--se ingresa la cantidad de productos considerando el stock_producto
+
+UPDATE producto SET stock_producto = stock_producto - [valor ingresado] WHERE id_producto = [id_producto escogido];
+SELECT precio_producto * [valor ingresado] WHERE id_producto = [id_producto escogido];
+
+--al presionar pagar 
+
+INSERT INTO transaccion (id_cliente)
+VALUES
+('[id_cliente seleccionado]');
+
+--una vez creado el valor de transaccion se guardara de igual forma cada transaccion_producto por cada producto distinto en la compra
+
+INSERT INTO transaccion_producto (id_transaccion, id_producto,cantidad_producto)
+VALUES
+([id_transaccion],[id_producto],[valor ingresado]);
+
+--se muestra en detalle
+
+SELECT id_transaccion FROM transaccion WHERE id_transaccion = [id_transaccion];
+SELECT fecha_transaccion FROM transaccion WHERE id_transaccion = [id_transaccion];
+SELECT SUM(cantidad_producto) FROM transaccion_producto WHERE id_transaccion = [id_transaccion];

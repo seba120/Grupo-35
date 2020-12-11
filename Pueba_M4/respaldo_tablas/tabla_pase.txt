@@ -1,0 +1,15 @@
+CREATE TABLE pase(
+    id_pase BIGSERIAL,
+    nombre_pase VARCHAR (50) NOT NULL,
+    detalle_pase VARCHAR (100) NOT NULL,
+    valor_pase INT NOT NULL,
+    CONSTRAINT pase_PK PRIMARY KEY(id_pase)
+);
+
+INSERT INTO pase (nombre_pase,detalle_pase, valor_pase)
+VALUES
+('matutino', 'valido de 07:00 a 11:59',2000),
+('break office', 'valido de 12:00 a 16:59',2400),
+('after office', 'valido desde 17:00 a 19:59',2400),
+('vespertino', 'valido desde 20:00 a 23:59',3000),
+('nocturno', 'valido desde 00:00 a 03:00',1500);

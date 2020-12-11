@@ -1,0 +1,59 @@
+--creacion de tabla transaccion
+
+CREATE TABLE transaccion (
+    id_transaccion BIGSERIAL,
+    fecha_transaccion DATE DEFAULT CURRENT_DATE,
+    id_cliente INT NOT NULL,
+    CONSTRAINT transaccion_pk PRIMARY KEY (id_transaccion),
+    CONSTRAINT cli_tran_fk FOREIGN KEY (id_cliente)
+        REFERENCES cliente (id_cliente) MATCH SIMPLE
+        ON DELETE SET NULL
+);
+
+--creacion de tabla transaccion_producto
+
+CREATE TABLE transaccion_producto (
+    id_transaccion INT NOT NULL,
+    id_producto INT NOT NULL,
+    cantidad_producto INT NOT NULL,
+    PRIMARY KEY(id_transaccion,id_producto)
+);
+
+--creacion tabla transaccion_pase
+
+CREATE TABLE transaccion_pase (
+    id_transaccion INT NOT NULL,
+    id_pase INT NOT NULL,
+    fecha_pase DATE DEFAULT CURRENT_DATE,
+    PRIMARY KEY(id_transaccion,id_pase)
+);
+
+--creacion tabla cliente_pase
+
+CREATE TABLE cliente_pase (
+    id_cliente INT NOT NULL,
+    id_pase INT NOT NULL,
+    PRIMARY KEY(id_cliente,id_pase)
+);
+
+--creacion tabla cliente_suscripcion
+
+CREATE TABLE cliente_suscripcion (
+    id_cliente INT NOT NULL,
+    id_suscripcion INT NOT NULL,
+    PRIMARY KEY(id_cliente,id_suscripcion)
+);
+
+--creacion tabla transaccion_suscripcion
+
+CREATE TABLE transaccion_suscripcion (
+    id_transaccion INT NOT NULL,
+    id_suscripcion INT NOT NULL,
+    PRIMARY KEY(id_transaccion,id_suscripcion)
+);
+
+--ingreso datos cliente_suscripcion
+
+INSERT INTO cliente_suscripcion (id_cliente,id_suscripcion)
+VALUES
+(1,5),(2,4),(3,2),(4,3),(5,1),(6,5),(7,4),(8,3),(9,2),(10,1),(11,1),(12,2),(13,3),(14,4),(15,5),(16,5),(17,4),(18,3),(19,2),(20,1);
