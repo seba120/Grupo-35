@@ -24,6 +24,7 @@ CREATE TABLE transaccion_producto (
 CREATE TABLE transaccion_pase (
     id_transaccion INT NOT NULL,
     id_pase INT NOT NULL,
+    fecha_pase DATE DEFAULT CURRENT_DATE,
     PRIMARY KEY(id_transaccion,id_pase)
 );
 
