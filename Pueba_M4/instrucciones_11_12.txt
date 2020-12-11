@@ -9,7 +9,7 @@ CREATE TABLE pase(
     CONSTRAINT pase_PK PRIMARY KEY(id_pase)
 );
 
-INSERT INTO pase (nombre_pase,detalle_pase,fecha_pase)
+INSERT INTO pase (nombre_pase,detalle_pase, valor_pase, fecha_pase)
 VALUES
 ('matutino', 'valido de 07:00 a 11:59',2000, '15-10-2020'),
 ('break office', 'valido de 12:00 a 16:59',2400, '18-10-2020'),
@@ -27,7 +27,7 @@ VALUES
 
 --cambiar hara que se introduzca por defecto la fecha actual
 
-DELETE TABLE transaccion;
+DROP TABLE transaccion;
 
 
 CREATE TABLE transaccion (
