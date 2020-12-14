@@ -1,0 +1,155 @@
+CREATE TABLE rol_animal (
+ rol_animal_id BIGSERIAL,
+ area_zoo_id INT NOT NULL,
+ nombre VARCHAR (50),
+ encargado_id1 INT,
+ encargado_id2 INT,
+ supervisor_id INT,
+ PRIMARY KEY (rol_animal_id)
+);
+
+INSERT INTO rol_animal (area_zoo_id, nombre, encargado_id1, encargado_id2, supervisor_id) VALUES
+(3,'Tiburón1', 5, 6, 3),(3,'Tiburón2', 5, 6,3),(3,'Tiburón3', 5, 6,3),
+(3, 'Piraña1', 5, 6,3),(3,'Piraña2', 5, 6,3),(3,'Piraña3', 5, 6,3),
+(3, 'Payaso1', 5, 6,3),(3,'Payaso2', 5, 6,3),(3,'Payaso3', 5, 6,3),
+(3, 'Cirujano1', 5, 6,3),(3, 'Cirujano2', 5, 6,3),(3,'Cirujano3', 5, 6,3),
+(3, 'Trucha1', 5, 6,3),(3, 'Trucha2', 5, 6,3),(3, 'Trucha3', 5, 6,3),
+(2, 'Mariposa1',3, 4,2), (2,'Mariposa2',3, 4,2),(2,'Mariposa2',3, 4,2),
+(2,'Abeja1',3, 4,2), (2,'Abeja2',3, 4,2),(2,'Abeja3',3, 4,2),
+(2,'Hormiga1',3, 4,2),(2, 'Hormiga2',3, 4,2),(2, 'Hormiga3',3, 4,2),
+(2, 'Cucaracha1',3, 4,2),(2, 'Cucaracha2',3, 4,2),(2,'Cucaracha3',3, 4,2),
+(2,'Libélula1',3, 4,2), (2, 'Libélula2',3, 4,2),(2, 'Libélula3',3, 4,2),
+(2,'Iguana1',3, 4,2),(2, 'Iguana2',3, 4,2),(2,'Iguana3',3, 4,2),
+(2,'Boa1',3, 4,2),(2,'Boa2',3, 4,2),(2,'Boa3',3, 4,2),
+(2,'Caimán1',3, 4,2),(2, 'Caimán2',3, 4,2),(2,'Caimán3',3, 4,2),
+(2,'Sapo1',3, 4,2),(2, 'Sapo2',3, 4,2),(2,'Sapo3',3, 4,2),
+(2, 'Serpiente1',3, 4,2), (2,'Serpiente2',3, 4,2),(2,'Serpiente3',3, 4,2),
+(1,'Loro1', 1, 2,1),(1,'Loro2', 1, 2,1),(1,'Loro3', 1, 2,1),
+(1,'Alcón1', 1, 2,1), (1, 'Alcón2', 1, 2,1),(1,'Alcón3', 1, 2,1),
+(1,'Gallina1', 1, 2,1),(1, 'Gallina2', 1, 2,1),(1,'Gallina3', 1, 2,1),
+(1,'Colibrí1', 1, 2,1),(1, 'Colibrí2', 1, 2,1),(1,'Colibrí3', 1, 2,1),
+(1,'Cóndor1', 1, 2,1), (1,'Cóndor2', 1, 2,1),(1,'Cóndor3', 1, 2,1),
+(1,'Vaca1', 1, 2,1), (1, 'Vaca2', 1, 2,1), (1, 'Vaca3', 1, 2,1),
+(1, 'Caballo1', 1, 2,1),(1, 'Caballo2', 1, 2,1),(1, 'Caballo3', 1, 2,1),
+(1,'Pudú1', 1, 2,1),(1,'Pudú2', 1, 2,1),(1,'Pudú3', 1, 2,1),
+(1, 'Canguro1', 1, 2,1),(1,'Canguro2', 1, 2,1),(1, 'Canguro3', 1, 2,1),
+(1, 'Cabra1', 1, 2,1), (1, 'Cabra2', 1, 2,1), (1,'Cabra3', 1, 2,1);
+
+
+---------------------------------------------------------------------------
+
+
+CREATE TABLE pez (
+ pez_id BIGSERIAL,
+ rol_animal_id INT,
+ area_zoo_id INT NOT NULL,
+ especie_pez VARCHAR(50) NOT NULL,
+ nombre VARCHAR (50) NOT NULL,
+ encargado_id1 INT NOT NULL,
+ encargado_id2 INT NOT NULL,
+ supervisor_id INT NOT NULL,
+ PRIMARY KEY (pez_id)
+);
+
+INSERT INTO pez (area_zoo_id, rol_animal_id, especie_pez, nombre, encargado_id1, encargado_id2, supervisor_id)
+VALUES (3, 1,'Tiburón', 'Tiburón1', 5, 6, 3),(3, 2,'Tiburón', 'Tiburón2', 5, 6,3),(3, 3,'Tiburón', 'Tiburón3', 5, 6,3),
+(3, 4, 'Piraña', 'Piraña1', 5, 6,3),(3,5, 'Piraña', 'Piraña2', 5, 6,3),(3, 6,'Piraña', 'Piraña3', 5, 6,3),
+(3, 7, 'Payaso', 'Payaso1', 5, 6,3),(3, 8,'Payaso', 'Payaso2', 5, 6,3),(3,9, 'Payaso', 'Payaso3', 5, 6,3),
+(3, 10, 'Cirujano', 'Cirujano1', 5, 6,3),(3, 11,'Cirujano', 'Cirujano2', 5, 6,3),(3,12, 'Cirujano', 'Cirujano3', 5, 6,3),
+(3, 13,'Trucha', 'Trucha1', 5, 6,3),(3,14, 'Trucha', 'Trucha2', 5, 6,3),(3,15, 'Trucha', 'Trucha3', 5, 6,3);
+
+------------------------------------------------------
+
+
+CREATE TABLE insecto (
+ insecto_id BIGSERIAL,
+ rol_animal_id INT,
+ area_zoo_id INT NOT NULL,
+ especie_insecto VARCHAR(50) NOT NULL,
+ nombre VARCHAR (50) NOT NULL,
+ encargado_id1 INT NOT NULL,
+ encargado_id2 INT NOT NULL,
+ supervisor_id INT NOT NULL,
+ PRIMARY KEY (insecto_id)
+);
+
+INSERT INTO insecto (area_zoo_id, rol_animal_id, especie_insecto, nombre, encargado_id1, encargado_id2, supervisor_id)
+VALUES (2, 16,'Mariposa', 'Mariposa1',3, 4,2), (2,17,'Mariposa', 'Mariposa2',3, 4,2),(2,18,'Mariposa', 'Mariposa2',3, 4,2),
+(2,19,'Abeja', 'Abeja1',3, 4,2), (2,20,'Abeja', 'Abeja2',3, 4,2),(2,21,'Abeja', 'Abeja3',3, 4,2),
+(2,22,'Hormiga', 'Hormiga1',3, 4,2),(2,23,'Hormiga', 'Hormiga2',3, 4,2),(2,24,'Hormiga', 'Hormiga3',3, 4,2),
+(2,25,'Cucaracha', 'Cucaracha1',3, 4,2),(2,26,'Cucaracha', 'Cucaracha2',3, 4,2),(2,27,'Cucaracha', 'Cucaracha3',3, 4,2),
+(2,28,'Libélula', 'Libélula1',3, 4,2), (2,29,'Libélula', 'Libélula2',3, 4,2),(2,30,'Libélula', 'Libélula2',3, 4,2);
+
+
+----------------------------------------------------
+
+
+CREATE TABLE reptil (
+ reptil_id BIGSERIAL,
+ rol_animal_id INT,
+ area_zoo_id INT NOT NULL,
+ especie_reptil VARCHAR(50) NOT NULL,
+ nombre VARCHAR (50) NOT NULL,
+ encargado_id1 INT NOT NULL,
+ encargado_id2 INT NOT NULL,
+ supervisor_id INT NOT NULL,
+ PRIMARY KEY (reptil_id)
+);
+
+INSERT INTO reptil (area_zoo_id, rol_animal_id, especie_reptil, nombre, encargado_id1, encargado_id2, supervisor_id)
+VALUES (2,31,'Iguana', 'Iguana1',3, 4,2),(2,32,'Iguana', 'Iguana2',3, 4,2),(2,33,'Iguana', 'Iguana3',3, 4,2),
+(2,34,'Boa', 'Boa1',3, 4,2),(2,35,'Boa', 'Boa2',3, 4,2),(2,36,'Boa', 'Boa3',3, 4,2),
+(2,37,'Caimán', 'Caimán1',3, 4,2),(2,38,'Caimán', 'Caimán2',3, 4,2),(2,39,'Caimán', 'Caimán3',3, 4,2),
+(2,40,'Sapo', 'Sapo1',3, 4,2),(2,41,'Sapo', 'Sapo2',3, 4,2),(2,42,'Sapo', 'Sapo3',3, 4,2),
+(2,43,'Serpiente', 'Serpiente1',3, 4,2), (2,44,'Serpiente', 'Serpiente2',3, 4,2),(2,45,'Serpiente', 'Serpiente3',3, 4,2);
+
+
+-----------------------------------------------------------------
+
+
+CREATE TABLE ave (
+ ave_id BIGSERIAL,
+ rol_animal_id INT,
+ area_zoo_id INT NOT NULL,
+ especie_ave VARCHAR(50) NOT NULL,
+ nombre VARCHAR (50) NOT NULL,
+ encargado_id1 INT NOT NULL,
+ encargado_id2 INT NOT NULL,
+ supervisor_id INT NOT NULL,
+ PRIMARY KEY (ave_id)
+);
+
+INSERT INTO ave (area_zoo_id, rol_animal_id, especie_ave, nombre, encargado_id1, encargado_id2, supervisor_id)
+VALUES (1,46, 'Cóndor', 'Cóndor1', 1, 2,1), (1,47,'Cóndor', 'Cóndor2', 1, 2,1),(1,48,'Cóndor', 'Cóndor3', 1, 2,1),
+(1,49,'Loro', 'Loro1', 1, 2,1),(1,50,'Loro', 'Loro2', 1, 2,1),(1,51,'Loro', 'Loro3', 1, 2,1),
+(1,52,'Alcón', 'Alcón1', 1, 2,1), (1,53,'Alcón', 'Alcón2', 1, 2,1),(1,54,'Alcón', 'Alcón3', 1, 2,1),
+(1,55,'Gallina', 'Gallina1', 1, 2,1),(1,56,'Gallina', 'Gallina2', 1, 2,1),(1,57,'Gallina', 'Gallina3', 1, 2,1),
+(1,58,'Colibrí', 'Colibrí1', 1, 2,1),(1,59,'Colibrí', 'Colibrí2', 1, 2,1),(1,60,'Colibrí', 'Colibrí3', 1, 2,1);
+
+
+------------------------------------------------------------------------------
+
+
+CREATE TABLE mamifero (
+ mamifero_id BIGSERIAL,
+ rol_animal_id INT,
+ area_zoo_id INT NOT NULL,
+ especie_mamifero VARCHAR(50) NOT NULL,
+ nombre VARCHAR (50) NOT NULL,
+ encargado_id1 INT NOT NULL,
+ encargado_id2 INT NOT NULL,
+ supervisor_id INT NOT NULL,
+ PRIMARY KEY (mamifero_id)
+);
+
+INSERT INTO mamifero (area_zoo_id, rol_animal_id, especie_mamifero, nombre, encargado_id1, encargado_id2, supervisor_id)
+VALUES (1,61,'Vaca', 'Vaca1', 1, 2,1), (1,62,'Vaca', 'Vaca2', 1, 2,1), (1,63,'Vaca', 'Vaca3', 1, 2,1),
+(1,64,'caballo', 'Caballo1', 1, 2,1),(1,65,'Caballo', 'Caballo2', 1, 2,1),(1,66,'Caballo', 'Caballo3', 1, 2,1),
+(1,67,'Pudú', 'Pudú1', 1, 2,1),(1,68,'Pudú', 'Pudú2', 1, 2,1),(1,69,'Pudú', 'Pudú3', 1, 2,1),
+(1,70,'Canguro', 'Canguro1', 1, 2,1),(1,71,'Canguro', 'Canguro2', 1, 2,1),(1,72,'Canguro', 'Canguro3', 1, 2,1),
+(1,73,'Cabra', 'Cabra1', 1, 2,1), (1,74,'Cabra', 'Cabra2', 1, 2,1), (1,75,'Cabra', 'Cabra3', 1, 2,1);
+
+
+
+
+

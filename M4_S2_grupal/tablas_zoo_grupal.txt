@@ -1,0 +1,58 @@
+base zoo_grupal
+usuario postgres
+
+------------------------------------------------------------------
+
+CREATE TABLE libro_novedades (
+ entrada_libro_id BIGSERIAL,
+ detalle_novedad VARCHAR (300) NOT NULL,
+ area_zoo_id INT NOT NULL,
+ PRIMARY KEY (entrada_libro_id)
+);
+
+
+------------------------------------------------------------
+
+
+CREATE TABLE encargado (
+ encargado_id BIGSERIAL,
+ area_zoo_id NUMERIC (50) NOT NULL,
+ nombre_encargado VARCHAR (20) NOT NULL,
+ apellido_encargado VARCHAR (20) NOT NULL,
+ movil_encargado NUMERIC NOT NULL,
+ PRIMARY KEY (encargado_id)
+);
+
+INSERT INTO encargado (area_zoo_id, nombre_encargado, apellido_encargado, movil_encargado)
+VALUES (1,'Isaac','Schlueter', 5688887777), (1, 'Linus','Torvalds', 5677776666),
+(2,'Niklaus','Wirth', 5666665555), (2,'Tim','Berners-Lee', 5655554444),
+(3,'Michael','Stonebraker', 5644443333), (3,'Armando','Casas',5611110000);
+
+
+-------------------------------------------------------------------
+
+
+CREATE TABLE supervisor (
+ supervisor_id BIGSERIAL,
+ area_zoo_id NUMERIC (50) NOT NULL,
+ nombre_supervisor VARCHAR (20) NOT NULL,
+ apellido_supervisor VARCHAR (20) NOT NULL,
+ movil_supervisor NUMERIC NOT NULL,
+ PRIMARY KEY (supervisor_id)
+);
+
+INSERT INTO supervisor (area_zoo_id, nombre_supervisor, apellido_supervisor, movil_supervisor)
+VALUES (1, 'Hector', 'Morales', 5671556543),(2, 'Marcos', 'Miranda', 5642312987),(3, 'Rosa', 'Hernández', 5643839506);
+
+
+----------------------------------------------------------------------
+
+
+CREATE TABLE area_zoo(
+ area_zoo_id BIGSERIAL,
+ nombre_area VARCHAR (50),
+ PRIMARY KEY (area_zoo_id)
+);
+
+INSERT INTO area_zoo (area_zoo_id, nombre_area)
+VALUES (1, 'Mamíferos y aves'), (2, 'Insectos y Reptiles'), (3, 'Peces');
